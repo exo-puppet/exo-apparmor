@@ -4,6 +4,8 @@
 define apparmor::define (
   $main_content  = false,
   $local_content = false) {
+  include apparmor
+
   if ($main_content != false) {
     file { "apparmor-main-${name}":
       ensure  => present,
